@@ -6,6 +6,7 @@ seaborn==0.13.2
 plotly==5.21.0
 scikit-learn==1.6.1
 streamlit==1.32.2
+streamlit-option-menu==0.3.6
 yfinance==0.2.37
 lightgbm==4.3.0
 prophet==1.1.5
