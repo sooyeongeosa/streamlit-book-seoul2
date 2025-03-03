@@ -1,0 +1,17 @@
+pandas==2.2.3
+sktime==0.36.0
+pmdarima==2.0.4
+matplotlib==3.7.3
+seaborn==0.13.2
+plotly==5.21.0
+scikit-learn==1.6.1
+streamlit==1.32.2
+yfinance==0.2.37
+lightgbm==4.3.0
+prophet==1.1.5
+statsmodels==0.14.4
+geopandas==0.14.4
+folium==0.15.1
+xmltodict==0.13.0
+millify==0.1.1
+pingouin==0.5.4
