@@ -12,7 +12,12 @@ import plotly.express as px
 import streamlit as st
 
 # 폰트 적용
-plt.rcParams['font.family'] = "Malgun Gothic"
+# plt.rcParams['font.family'] = "Malgun Gothic"
+import os
+from matplotlib import font_manager as fm
+
+fpath = os.path.join(os.getcwd(),"Nanum_Gothic/NanumGothic-Bold.ttf")
+prop = fm.FontProperties(fname=fpath)
 
 def twoMeans(total_df):
     total_df['month'] = total_df['DEAL_YMD'].dt.month
@@ -96,7 +101,7 @@ def corrRelation(total_df):
     sns.scatterplot(x='BLDG_AREA', y='OBJ_AMT', data=sgg_df)
     ax.text(0.95, 0.05, f'Pearson Correlation: {corr_coef["r"].values[0]:.2f}',
                transform=ax.transAxes, ha='right', fontsize=12)
-    ax.set_title(f'{selected_sgg_nm} 피어슨 상관계수')
+    ax.set_title(f'{selected_sgg_nm} 피어슨 상관계수',fontproperties=prop)
     st.pyplot(fig)
 
     # 산점도 그래프 그리기 (면적 vs 가격 관계 시각화)
@@ -109,9 +114,9 @@ def corrRelation(total_df):
     sns.scatterplot(x='size', y='mean', data=mean_size)
     ax.text(0.95, 0.05, f'Pearson Correlation: {corr_coef_df["r"].values[0]:.2f}',
             transform=ax.transAxes, ha='right', fontsize=12)
-    ax.set_title(f'{selected_sgg_nm} 상관관계')
-    ax.set_xlabel("거래건수")
-    ax.set_ylabel("아파트 평균 가격")
+    ax.set_title(f'{selected_sgg_nm} 상관관계',fontproperties=prop)
+    ax.set_xlabel("거래건수",fontproperties=prop)
+    ax.set_ylabel("아파트 평균 가격",fontproperties=prop)
     st.pyplot(fig)
 
 
